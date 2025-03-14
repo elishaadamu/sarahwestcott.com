@@ -55,7 +55,7 @@
     property="og:url"
     content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
   />
-  <meta property="og:image" content="{{ site.url }}/path/to/your/image.jpg" />
+  <meta property="og:image" content="{{ site.url }}/img/{{page.image}}" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta
@@ -63,7 +63,7 @@
     content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"
   />
   <meta name="twitter:description" content="{{ site.description }}" />
-  <meta name="twitter:image" content="{{ site.url }}/path/to/your/image.jpg" />
+  <meta name="twitter:image" content="{{ site.url }}/img/{{page.image}}" />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
