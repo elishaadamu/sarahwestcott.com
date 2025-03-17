@@ -1,30 +1,52 @@
-Agency Jekyll theme
-====================
+# Deploying Jekyll Site to GitHub Pages
 
-Agency theme based on [Agency bootstrap theme ](https://startbootstrap.com/template-overviews/agency/)
+## **Step 1: Configure GitHub Pages**
 
-# How to use
+1. Navigate to your repository on **GitHub**.
+2. Go to **Settings** > **Pages**.
+3. Under **Source**, select the `main` branch and click **Save**.
+4. Your site will be available at `https://your-username.github.io/your-repo/` after a few minutes.
 
-###Portfolio 
+## **Step 2: Configure `baseurl` in `_config.yml`**
 
-Portfolio projects are in '/_posts'
+### **If You Don't Have a Custom Domain**
 
-Images are in '/img/portfolio'
+Set the `baseurl` to the repository name:
 
-###About
+```yaml
+baseurl: "/your-repo" # Change to match your GitHub repo name
+url: "https://your-username.github.io"
+```
 
-Images are in '/img/about/'
+### **If You Have a Custom Domain**
 
-###Team
+Set `baseurl` to an empty string:
 
-Team members and info are in '_config.yml'
+```yaml
+baseurl: "" # Leave empty if using a custom domain
+url: "https://your-custom-domain.com"
+```
 
-Images are in '/img/team/'
+## **Step 3: Build and Test Locally**
 
+Before pushing changes, test the site locally:
 
-# Demo
+```bash
+bundle exec jekyll serve
+```
 
-View this jekyll theme in action [here](https://y7kim.github.io/agency-jekyll-theme)
+If using a `baseurl`, access the site at:
 
-=========
-For more details, read [documentation](http://jekyllrb.com/)
+```
+http://localhost:4000/your-repo/
+```
+
+## **Step 4: Commit and Push Changes**
+
+After updating `_config.yml`, commit and push:
+
+```bash
+git add .
+git commit -m "Update baseurl settings"
+git push origin main
+```
